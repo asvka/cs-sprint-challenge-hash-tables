@@ -1,10 +1,19 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    # Find the intersection between multiple lists of integers.
+    array = {}
+    result = []
 
+    for i in arrays:
+        for num in i:
+            if num not in array:
+                array[num] = 1
+            else:
+                result.append(num)
+    # Return a list
+    result = list(dict.fromkeys(result))
     return result
+
+
 
 
 if __name__ == "__main__":
