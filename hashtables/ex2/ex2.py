@@ -6,9 +6,18 @@ class Ticket:
 
 
 def reconstruct_trip(tickets, length):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
-
+    # Write a function `reconstruct_trip` to reconstruct your trip from your mass of flight tickets.
+    # create another cache, I think... sensing a pattern
+    array = {}
+    # create dict or maybe list
+    route = [None] * length
+    # iterate over list of tickets, source (key) destination (val)
+    for i in tickets:
+        array[i.source] = i.destination
+    # initial source value should be 'None'
+    destination = array['NONE']
+    # iterate over range and set dest and source
+    for itinerary in range(length):
+        route[itinerary] = destination
+        destination = array[destination]
     return route
